@@ -4,15 +4,15 @@
 }
 
 body {
-  font-size: calc(2.5vw + .3rem);
+  font-size: calc(3vw + 1vh);
   font-weight: 700;
   line-height: 1.2rem;
   font-family: Inter, Verdana, sans-serif;
 }
 
 h1{
-  font-size: calc(3vw + 1.3rem);
-  padding:5%;
+  font-size: calc(2vw + 1rem);
+  padding: 2vw 20vw 1vw 10vw;
 }
 
 input{
@@ -24,7 +24,7 @@ input{
 }
 
 .item{
-  margin: 0.8vw 0;
+  margin: 1.5vw 0;
   display: flex;
   flex-flow: column wrap;
   align-content: center;
@@ -33,7 +33,7 @@ input{
 
 .meme__img{
   height: 0;
-  transition: height .3s;
+  transition: all .3s;
 }
 
 p{
@@ -43,70 +43,92 @@ p{
   content: "";
 }
 
-.item__title{
+.item__label{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: blue;
+  transition: all .3s;
+}
+
+.label__string{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1vw 0;
   width: 100%;
-  padding: 2vw 0;
-  color: blue;
-  transition: color .3s;
 }
 
-.item__input:checked ~ .meme__img{
-  height: 40vh;
-  transition: height .3s;
+.item__input:checked ~ .item__label .meme__img{
+  height: calc(15vh + 15vw);
+  transition: all .3s;
 }
 
-.item__input:checked ~ .item__title{
+.item__input:checked ~ .item__label{
   color: black;
-  transition: color .3s;
+  transition: all .3s;
 }
 
-.item__input:checked ~ .item__title .plus{
+.item__input:checked ~ .item__label .plus{
     transform: rotate(45grad);
-    transition: all .3s ease;
+    transition: all .3s ;
+}
+
+@media (min-width: 768px){
+  body {
+    font-size: calc(2vw + 1vh);
+  }
+  .container{
+    margin: 0.8vw 20%;
+  }
 }
 
 @media (min-width: 992px){
+  body {
+    font-size: calc(.8vw + 1vh);
+  }
+
+  .container{
+    margin: 0.3vw 30%;
+  }
+
   .plus{
     visibility: hidden;
   }
 
-  .item,
+  .item{
+    margin: .8vw 0;
+    cursor: pointer;
+  }
+
   .item *{
     cursor: pointer;
   }
 
   .container:hover .plus{
     visibility: visible;
-    transition: all .3s ease;
+    transition: all .3s;
   }
 
-  .item:hover>.meme__img{
-    height: 40vh;
-    transition: height .3s;
+  .item__input:checked ~ .item__label .meme__img{
+    height: calc(8vh + 8vw);
+    transition: all .3s;
+  }
+
+  .item:hover .meme__img{
+    height: calc(8vh + 8vw);
+    transition: all .3s;
   }
   
-  .item:hover > .item__title{
+  .item:hover > .item__label{
     color: black;
-    transition: color .3s;
+    transition: all .3s;
   }
   
-  .item:hover > .item__title .plus{
+  .item:hover > .item__label .plus{
     transform: rotate(45grad);
-    transition: all .3s ease;
-  }
-}
-
-@media (min-width: 700px){
-  .container{
-    margin: 0.8vw 12%;
-  }
-}
-
-@media (min-width: 1100px){
-  .container{
-    margin: 0.8vw 20%;
+    transition: all .3s;
   }
 }
