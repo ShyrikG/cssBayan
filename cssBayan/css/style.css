@@ -108,12 +108,12 @@ p{
 
   .container:hover .plus{
     visibility: visible;
-    transition: all .5s;
+    transition: all .3s;
   }
 
   .container:hover .item__label{
     color: black;
-    transition: all .5s;
+    transition: all .3s;
   }
 
   .item__input:checked ~ .item__label .meme__img{
@@ -123,7 +123,7 @@ p{
 
   .item:hover .meme__img{
     height: calc(8vh + 8vw);
-    transition: all .5s;
+    transition: all .3s;
   }
   
   .item:hover > .item__label{
@@ -134,5 +134,19 @@ p{
   .item:hover > .item__label .plus{
     transform: rotate(45grad);
     transition: all .3s;
+  }
+
+  .item__input:active ~ .item__label{
+    color: #0000ff;
+    cursor: progress;
+  }
+  
+  .item__input:active ~ .item__label .plus{
+    filter: invert(9%) sepia(100%) saturate(5182%) hue-rotate(238deg) brightness(113%) contrast(152%);
+    transition: all .3s;
+  }
+
+  .item__input:active ~ .item__label .meme__img{
+    opacity: 0.8;
   }
 }
