@@ -100,16 +100,20 @@ p{
 
   .item{
     margin: .8vw 0;
-    cursor: pointer;
   }
 
-  .item *{
+  .item__input ~ .item__label{
     cursor: pointer;
   }
 
   .container:hover .plus{
     visibility: visible;
-    transition: all .3s;
+    transition: all .5s;
+  }
+
+  .container:hover .item__label{
+    color: black;
+    transition: all .5s;
   }
 
   .item__input:checked ~ .item__label .meme__img{
@@ -119,7 +123,7 @@ p{
 
   .item:hover .meme__img{
     height: calc(8vh + 8vw);
-    transition: all .3s;
+    transition: all .5s;
   }
   
   .item:hover > .item__label{
